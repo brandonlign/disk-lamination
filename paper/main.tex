@@ -27,15 +27,15 @@
 \begin{document}
 
 \begin{abstract}
-For a cluster algebra of a triangulated polygon with coefficients given by a
-single lamination, Kang, Lee and Lim specialize the cluster variable of an arc
-by setting every initial cluster variable to $1$ and the coefficient variable to
-$q$. They proved that the resulting polynomial is unimodal and conjectured that
-it is log-concave. We prove that it is either constant or has only simple,
-negative real roots. In particular it is log-concave, which proves their
-conjecture. The proof reduces the polynomial to a weighted count of walks with
-two states, which we write as $\det(I+qMM^{\mathsf T})$ for a matrix $M$ whose
-inverse is bidiagonal.
+Consider a cluster algebra from a triangulated polygon with coefficients given
+by a single lamination. Kang, Lee and Lim specialize the cluster variable of an
+arc by setting every initial cluster variable to $1$ and the coefficient
+variable to $q$. They proved that the resulting polynomial is unimodal and
+conjectured that it is log-concave. We prove that it is either constant or has
+only simple, negative real roots. In particular, it is log-concave, which
+resolves their conjecture. Our proof reduces the polynomial to a weighted count
+of two-state walks, which we express as $\det(I+qMM^{\mathsf T})$ for a matrix
+$M$ with bidiagonal inverse.
 \end{abstract}
 
 \maketitle
@@ -44,25 +44,27 @@ inverse is bidiagonal.
 
 Let $(S,M)$ be an unpunctured disk with $n\ge4$ marked points on its boundary,
 that is, a convex $n$-gon, and let $T$ be a triangulation of it. Fomin,
-Shapiro and Thurston~\cite{FST} associate a cluster algebra with $T$ in which
-the cluster variables correspond to the arcs (diagonals) of the polygon.
-Coefficients can be specified geometrically by a \emph{lamination}, a
-collection of non-crossing curves on the surface: by Fomin and
-Thurston~\cite{FT}, the shear coordinates of a lamination with respect to $T$
-can be used as frozen rows of the exchange matrix, and the resulting extended
-exchange matrix mutates compatibly with flips of $T$.
+Shapiro and Thurston~\cite{FST} associate a cluster algebra with $T$ whose
+cluster variables correspond to the arcs (diagonals) of the polygon.
+
+Coefficients in this algebra can be specified geometrically by a
+\emph{lamination}, meaning a collection of non-crossing curves on the surface.
+Fomin and Thurston~\cite{FT} attach to each lamination its shear coordinates
+with respect to $T$ (recalled below). Appending these coordinates as frozen
+rows of the exchange matrix yields an extended exchange matrix whose mutations
+match diagonal flips of $T$.
 
 Kang, Lee and Lim~\cite{KLL} studied the case of a \emph{single lamination}
-$L$, consisting of one curve whose two endpoints lie on the boundary of the
-disk. The extended exchange matrix then has one frozen row, so the cluster
-variable $x_\gamma$ of an arc $\gamma$ is a Laurent polynomial in the initial
-cluster variables and one coefficient variable $y$. Following~\cite[Definition~20]{KLL},
-the \emph{$c$-polynomial} of $\gamma$ is
+$L$, consisting of one curve with both endpoints on the boundary of the disk.
+The extended exchange matrix then has a single frozen row. Consequently, the
+cluster variable $x_\gamma$ of an arc $\gamma$ is a Laurent polynomial in the
+initial cluster variables and one coefficient variable $y$.
+Following~\cite[Definition~20]{KLL}, the \emph{$c$-polynomial} of $\gamma$ is
 \[
 c_\gamma(q)=x_\gamma\big|_{x_1=\cdots=x_{n-3}=1,\ y=q}.
 \]
-It has nonnegative integer coefficients. Kang, Lee and Lim proved that
-$c_\gamma$ is unimodal~\cite[Theorem~14]{KLL} and stated the following
+This polynomial has nonnegative integer coefficients. Kang, Lee and Lim proved
+that $c_\gamma$ is unimodal~\cite[Theorem~14]{KLL} and proposed the following
 conjecture.
 
 \begin{conjecture}[{\cite[Conjecture~1]{KLL}}]\label{conj:KLL}
@@ -71,9 +73,9 @@ arc $\gamma$ on $(S,M)$, the coefficient sequence of $c_\gamma(q)$ is
 log-concave.
 \end{conjecture}
 
-They point out that the standard method of proving log-concavity by geometric
-lattices does not apply here: the polynomial can have constant and leading
-coefficient both equal to $2$. Our main result is the following.
+They observe that the standard approach to log-concavity via geometric lattices
+does not apply here: the polynomial can have constant and leading coefficients
+both equal to $2$. Our main result is the following.
 
 \begin{theorem}\label{thm:main}
 Let $T$ be a triangulation of an unpunctured disk, $L$ a single lamination and
@@ -81,54 +83,62 @@ $\gamma$ an arc. Then $c_\gamma(q)$ is either a positive constant or has only
 simple, negative real roots.
 \end{theorem}
 
-A polynomial with positive coefficients and only real roots is log-concave
-with no internal zeros by Newton's inequalities, and hence unimodal. Thus
-Theorem~\ref{thm:main} proves Conjecture~\ref{conj:KLL} and gives a second
-proof of~\cite[Theorem~14]{KLL}. Since the specialization is a ring
-homomorphism, we also obtain the following.
+By Newton's inequalities, any polynomial with positive coefficients and only
+real roots is log-concave with no internal zeros, and therefore unimodal. Thus
+Theorem~\ref{thm:main} resolves Conjecture~\ref{conj:KLL} and gives a second
+proof of~\cite[Theorem~14]{KLL}. Because the specialization is a ring
+homomorphism, we also obtain the following consequence.
 
 \begin{corollary}\label{cor:monomials}
 With $T$ and $L$ as in Theorem~\ref{thm:main}, the specialization of every
 cluster monomial at $x_1=\cdots=x_{n-3}=1$, $y=q$ has only negative real roots.
 \end{corollary}
 
-The roots of a cluster monomial may be repeated, for instance for the square of
-a cluster variable.
+A cluster monomial can have repeated roots, for instance when it is the square
+of a cluster variable.
 
-The proof has two steps. In Section~\ref{sec:walks} we show that a weighted
-count of walks on two states, in which each step allows only one kind of
-change, is a determinant $\det(I+qMM^{\mathsf T})$, where $M^{-1}$ is
-bidiagonal. This forces the roots to be real, negative and simple. In
-Section~\ref{sec:lamination} we express $c_\gamma$ as such a count. The arc and
-the lamination cross a common run of diagonals, and on this run the shear
-coordinates telescope (Lemma~\ref{lem:shear}). The rest of the arc contributes
-only two pairs of positive multiplicities, which become the weights of two
-extra steps. No restriction on the triangulation is needed. Section~\ref{sec:examples}
-compares the theorem with the examples of~\cite{KLL} and describes the
-computer checks in the accompanying repository.
+The proof proceeds in two steps. In Section~\ref{sec:walks}, we study a
+weighted count of walks on two states in which each step permits only one
+direction of change. We express this generating polynomial as a determinant
+$\det(I+qMM^{\mathsf T})$ where $M^{-1}$ is bidiagonal, which forces the roots
+to be real, negative and simple.
 
-The hypothesis that the surface is a disk is used through the fact that the
-dual graph of a triangulation of a disk is a tree. Til\`epe~\cite{Til} gives
-exchange matrices of annular type with one frozen row whose specializations
-are not log-concave, such as $1+q^2$, and discusses their realization by
-single laminations of an annulus.
+In Section~\ref{sec:lamination}, we write $c_\gamma$ as such a walk count for
+an arbitrary triangulation. The arc and the lamination cross a common
+consecutive sequence of diagonals, along which the shear coordinates telescope
+(Lemma~\ref{lem:shear}). The remaining portions of the arc contribute only two
+pairs of positive multiplicities, which become the weights of two extra steps.
+Section~\ref{sec:examples} compares the theorem with the examples
+of~\cite{KLL} and summarizes the computer checks in the accompanying
+repository.
+
+Our proof uses the disk hypothesis through a single property: the dual graph of
+a triangulation of a disk is a tree.
+Til\`epe~\cite{Til} exhibits exchange matrices of annular type with one frozen
+row whose specializations are not log-concave, such as $1+q^2$, and discusses
+their realization by single laminations of an annulus.
 
 \section{Walks with two states}\label{sec:walks}
 
-A \emph{step list} is a finite sequence of steps $1,\dots,m$, where step $j$
-has a \emph{direction} $\delta_j\in\{0,1\}$ and a \emph{weight} $w_j>0$. A
-\emph{walk} is a sequence $(z_0,z_1,\dots,z_m)\in\{0,1\}^{m+1}$ with
-$z_j\in\{z_{j-1},\delta_j\}$ for every $j$: at step $j$ the walk either stays
-or moves to the state $\delta_j$. Step $j$ is a \emph{change} if
-$z_j\ne z_{j-1}$ and an \emph{upward change} if moreover $z_j=1$. The weight of
-a walk is the product of $w_j$ over its changes, and $\up(z)$ denotes its
-number of upward changes. For $\sigma,\tau\in\{0,1\}$ let
+We begin with a linear-algebraic lemma on weighted two-state walks, which will
+later encode our specialized cluster variables. A \emph{step list} is a finite
+sequence of steps $1,\dots,m$, where each step $j$ has a \emph{direction}
+$\delta_j\in\{0,1\}$ and a \emph{weight} $w_j>0$. A \emph{walk} is a sequence
+$(z_0,z_1,\dots,z_m)\in\{0,1\}^{m+1}$ satisfying $z_j\in\{z_{j-1},\delta_j\}$
+for every $j$; at step $j$, the walk either stays in its current state or moves
+to state $\delta_j$.
+
+We call step $j$ a \emph{change} if $z_j\ne z_{j-1}$, and an \emph{upward
+change} if in addition $z_j=1$. The weight of a walk is the product of $w_j$
+over all its changes, and $\up(z)$ denotes its number of upward changes. For
+$\sigma,\tau\in\{0,1\}$, define the generating polynomial
 \[
 W_{\sigma\tau}(q)=\sum_{z}\Bigl(\prod_{j\text{ a change}}w_j\Bigr)q^{\up(z)},
 \]
-the sum over walks with $z_0=\sigma$ and $z_m=\tau$. For a nonzero Laurent
-polynomial $P$ in $q$, write $\widetilde P$ for $P$ divided by the lowest power
-of $q$ occurring in it.
+summed over all walks with $z_0=\sigma$ and $z_m=\tau$. For a nonzero Laurent
+polynomial $P$ in $q$, write $\widetilde P$ for the polynomial obtained by
+dividing $P$ by the lowest power of $q$ occurring in it. The main result of
+this section is that this normalized polynomial is always real-rooted.
 
 \begin{lemma}\label{lem:walks}
 If $W_{\sigma\tau}\ne0$, then $\widetilde W_{\sigma\tau}$ is a positive
@@ -136,176 +146,197 @@ constant or has only simple, negative real roots.
 \end{lemma}
 
 \begin{proof}
-\emph{Reduction.} If steps $j$ and $j+1$ have the same direction, a walk
-changes at most once at these two steps, and the state after them does not
-depend on which of the two it uses. Replacing them by one step of the same
-direction and weight $w_j+w_{j+1}$ therefore leaves $W_{\sigma\tau}$
-unchanged. After all such merges, the directions alternate. A first step with
-direction $\sigma$ can never be a change, and a last step with direction
-different from $\tau$ cannot be a change in a walk ending at $\tau$; deleting
-such steps also leaves $W_{\sigma\tau}$ unchanged. We may therefore assume that
-the directions alternate, that $\delta_1=1-\sigma$, and that $\delta_m=\tau$
-(if $m=0$, then $\sigma=\tau$ and $W_{\sigma\tau}=1$).
+\emph{Reduction.} Suppose two consecutive steps $j$ and $j+1$ have the same
+direction. Any walk can change state at most once across these two steps, and
+its state afterward does not depend on which of the two steps it uses. Merging
+them into one step of the same direction and weight $w_j+w_{j+1}$ therefore
+leaves $W_{\sigma\tau}$ unchanged. Repeating this merge makes the directions
+alternate. Moreover, a first step with direction $\sigma$ can never be a
+change, and a last step with direction different from $\tau$ cannot be a change
+in a walk ending at $\tau$. Deleting such boundary steps also preserves
+$W_{\sigma\tau}$. We may therefore assume that the directions alternate, with
+$\delta_1=1-\sigma$ and $\delta_m=\tau$. (If $m=0$, then $\sigma=\tau$ and
+$W_{\sigma\tau}=1$.)
 
-\emph{Equal endpoints.} Let $\sigma=\tau$, so $m=2s$. Write the weights as
+\emph{Equal endpoints.} Suppose $\sigma=\tau$, so $m=2s$. Write the weights as
 $a_1,b_1,\dots,a_s,b_s$, so that the steps with weight $a_i$ move away from
-$\sigma$ and those with weight $b_i$ move back. A walk with $r$ excursions away
-from $\sigma$ is determined by the steps $a_{i_1},b_{j_1},\dots,a_{i_r},b_{j_r}$
-where it changes, and these are exactly the index sequences with
+$\sigma$ and those with weight $b_i$ move back. A walk making $r$ excursions
+away from $\sigma$ is uniquely determined by the steps
+$a_{i_1},b_{j_1},\dots,a_{i_r},b_{j_r}$ where it changes, and these are
+precisely the index sequences satisfying
 \begin{equation}\label{eq:interlace}
 i_1\le j_1<i_2\le j_2<\cdots<i_r\le j_r.
 \end{equation}
 Each excursion contains exactly one upward change. Hence the coefficient of
-$q^r$ in $W_{\sigma\sigma}$ is the sum of $a_{i_1}\cdots a_{i_r}b_{j_1}\cdots b_{j_r}$
-over all sequences~\eqref{eq:interlace}.
+$q^r$ in $W_{\sigma\sigma}$ is the sum of
+$a_{i_1}\cdots a_{i_r}b_{j_1}\cdots b_{j_r}$ over all
+sequences~\eqref{eq:interlace}.
 
 Let $U$ be the $s\times s$ matrix with $U_{ij}=1$ for $i\le j$ and $U_{ij}=0$
-otherwise, and let $A=\operatorname{diag}(a_i)$ and $B=\operatorname{diag}(b_i)$.
-We claim that
+otherwise, and set $A=\operatorname{diag}(a_i)$ and
+$B=\operatorname{diag}(b_i)$. We claim that
 \begin{equation}\label{eq:det}
 W_{\sigma\sigma}(q)=\det(I+qAUBU^{\mathsf T}).
 \end{equation}
 The coefficient of $q^r$ on the right is the sum of the principal $r\times r$
 minors of $AUBU^{\mathsf T}$. By the Cauchy--Binet formula, the principal minor
-on a row set $I$ equals $\sum_J a_I\,b_J\,\det(U_{I,J})^2$, where $J$ runs over
-the $r$-subsets of $\{1,\dots,s\}$, $a_I=\prod_{i\in I}a_i$ and
-$b_J=\prod_{j\in J}b_j$. Let $I=\{i_1<\cdots<i_r\}$ and $J=\{j_1<\cdots<j_r\}$.
-Row $\ell$ of $U_{I,J}$ has a one in column $k$ exactly when $j_k\ge i_\ell$,
-so the rows are indicator vectors of nested final segments of the columns. Such
-a matrix has nonzero determinant only if the $\ell$-th row begins exactly at
-column $\ell$ for every $\ell$, that is, $j_{\ell-1}<i_\ell\le j_\ell$; it is
-then upper unitriangular. Thus $\det(U_{I,J})^2$ is $1$ for the sequences
-in~\eqref{eq:interlace} and $0$ otherwise, which proves~\eqref{eq:det}.
+indexed by a row set $I$ equals $\sum_J a_I\,b_J\,\det(U_{I,J})^2$, where $J$
+runs over all $r$-subsets of $\{1,\dots,s\}$, $a_I=\prod_{i\in I}a_i$, and
+$b_J=\prod_{j\in J}b_j$. Write $I=\{i_1<\cdots<i_r\}$ and
+$J=\{j_1<\cdots<j_r\}$. Row $\ell$ of $U_{I,J}$ has a one in column $k$
+precisely when $j_k\ge i_\ell$, so each row consists of zeros followed by ones,
+and the ones in each row form a subset of those in the preceding row. Such a
+matrix has nonzero determinant only if the first one in row $\ell$ lies in
+column $\ell$ for every $\ell$, that is, $j_{\ell-1}<i_\ell\le j_\ell$; in that
+case it is upper triangular with ones on the diagonal. Thus $\det(U_{I,J})^2$
+equals $1$ for the sequences in~\eqref{eq:interlace} and $0$ otherwise, which
+proves~\eqref{eq:det}.
 
-Put $M=A^{1/2}UB^{1/2}$. Then $AUBU^{\mathsf T}=A^{1/2}(MM^{\mathsf T})A^{-1/2}$,
-so $W_{\sigma\sigma}(q)=\det(I+qMM^{\mathsf T})=\prod_k(1+q\lambda_k)$, where
+Set $M=A^{1/2}UB^{1/2}$. Because
+$AUBU^{\mathsf T}=A^{1/2}(MM^{\mathsf T})A^{-1/2}$, we have
+$W_{\sigma\sigma}(q)=\det(I+qMM^{\mathsf T})=\prod_k(1+q\lambda_k)$, where
 $\lambda_1,\dots,\lambda_s$ are the eigenvalues of the positive definite matrix
-$MM^{\mathsf T}$. The roots are the numbers $-1/\lambda_k<0$. They are simple
-because $K=(MM^{\mathsf T})^{-1}=N^{\mathsf T}N$, where
+$MM^{\mathsf T}$. Its roots are therefore the negative real numbers
+$-1/\lambda_k<0$.
+
+To see that these roots are simple, consider the inverse
+$K=(MM^{\mathsf T})^{-1}=N^{\mathsf T}N$, where
 $N=M^{-1}=B^{-1/2}U^{-1}A^{-1/2}$ is upper bidiagonal:
 \[
 N_{ii}=(a_ib_i)^{-1/2},\qquad N_{i,i+1}=-(b_ia_{i+1})^{-1/2}.
 \]
-Hence $K$ is a real symmetric tridiagonal matrix with
-$K_{i,i+1}=N_{ii}N_{i,i+1}\ne0$, and such a matrix has simple eigenvalues: in
-the equation $Kv=\mu v$, the first coordinate of $v$ determines all the
-others. The eigenvalues of $K$ are the numbers $1/\lambda_k$.
+Consequently, $K$ is a real symmetric tridiagonal matrix with
+$K_{i,i+1}=N_{ii}N_{i,i+1}\ne0$. Any such matrix has simple eigenvalues: in the
+equation $Kv=\mu v$, the first coordinate of $v$ determines all the others.
+Since the eigenvalues of $K$ are the numbers $1/\lambda_k$, the roots are
+simple.
 
-\emph{Different endpoints.} Let $\sigma\ne\tau$, so $m=2s-1$ with weights
-$a_1,b_1,\dots,a_{s-1},b_{s-1},a_s$; again steps $a_i$ move away from $\sigma$.
-Append a last step of direction $\sigma$ and weight $t>0$, called $b_s$, and
-let $P_t(q)$ be the resulting enumerator of walks from $\sigma$ to $\sigma$.
-Each term of $P_t$ contains $t$ at most once, and the terms containing $t$
-correspond to the walks counted by $W_{\sigma\tau}$, followed by a final change
-back to $\sigma$. This final change is upward exactly when $\sigma=1$, while
-every excursion has one upward change. So $P_t=P_0+t\,q^{\sigma}W_{\sigma\tau}$.
+\emph{Different endpoints.} Now suppose $\sigma\ne\tau$, so $m=2s-1$ with
+weights $a_1,b_1,\dots,a_{s-1},b_{s-1},a_s$, where again the steps of weight
+$a_i$ move away from $\sigma$. Append one last step of direction $\sigma$ and
+weight $t>0$, denoted $b_s$, and let $P_t(q)$ be the resulting generating
+polynomial for walks from $\sigma$ to $\sigma$. Each term of $P_t$ is at most
+linear in $t$. The terms containing $t$ correspond to the walks counted by
+$W_{\sigma\tau}$, followed by a final change back to $\sigma$. Because this
+final change is upward precisely when $\sigma=1$ and every excursion has one
+upward change, we obtain $P_t=P_0+t\,q^{\sigma}W_{\sigma\tau}$.
 
-Let $B_t=\operatorname{diag}(b_1,\dots,b_{s-1},t)$ and
-$M_t=A^{1/2}UB_t^{1/2}$. By the first case,
-$P_t(q)=\det(I+qM_tM_t^{\mathsf T})$. With $K_t=(M_tM_t^{\mathsf T})^{-1}$
-and $c=a_1\cdots a_s\,b_1\cdots b_{s-1}$,
+Set $B_t=\operatorname{diag}(b_1,\dots,b_{s-1},t)$ and
+$M_t=A^{1/2}UB_t^{1/2}$. By the equal-endpoints case,
+$P_t(q)=\det(I+qM_tM_t^{\mathsf T})$. Writing $K_t=(M_tM_t^{\mathsf T})^{-1}$
+and $c=a_1\cdots a_s\,b_1\cdots b_{s-1}$, we have
 \[
 \frac{P_t(q)}{t}=\frac{\det(M_tM_t^{\mathsf T})}{t}\det(K_t+qI)=c\,\det(K_t+qI).
 \]
-The matrix $N_t=M_t^{-1}$ is as above, and only its last row depends on $t$.
-That row has the single nonzero entry $(a_st)^{-1/2}$. Since
-$K_t=\sum_k n_k^{\mathsf T}n_k$ over the rows $n_k$ of $N_t$, letting
-$t\to\infty$ gives
+As before, $N_t=M_t^{-1}$ is upper bidiagonal, and only its last row depends on
+$t$: that row has the single nonzero entry $(a_st)^{-1/2}$. Expanding
+$K_t=\sum_k n_k^{\mathsf T}n_k$ over the rows $n_k$ of $N_t$ and letting
+$t\to\infty$ yields
 \[
 q^{\sigma}W_{\sigma\tau}(q)=\lim_{t\to\infty}\frac{P_t(q)}{t}=c\,\det(K_\infty+qI),
 \qquad K_\infty=\sum_{k=1}^{s-1}n_k^{\mathsf T}n_k.
 \]
 The rows $n_1,\dots,n_{s-1}$ are linearly independent, so $K_\infty$ is
 positive semidefinite of rank $s-1$. It is tridiagonal with
-$(K_\infty)_{i,i+1}=N_{ii}N_{i,i+1}\ne0$ for $1\le i\le s-1$, so its
-eigenvalues are simple: $0$ and $s-1$ positive numbers $\mu_1,\dots,\mu_{s-1}$.
-Hence $q^{\sigma}W_{\sigma\tau}(q)=c\,q\prod_k(q+\mu_k)$, and
-$\widetilde W_{\sigma\tau}=c\prod_k(q+\mu_k)$. For $s=1$ this is the constant
-$c=a_1$.
+$(K_\infty)_{i,i+1}=N_{ii}N_{i,i+1}\ne0$ for $1\le i\le s-1$. Hence its
+eigenvalues are simple, consisting of $0$ and $s-1$ positive real numbers
+$\mu_1,\dots,\mu_{s-1}$. Therefore
+$q^{\sigma}W_{\sigma\tau}(q)=c\,q\prod_k(q+\mu_k)$, and
+$\widetilde W_{\sigma\tau}=c\prod_k(q+\mu_k)$. When $s=1$, this reduces to the
+constant $c=a_1$.
 \end{proof}
 
 \section{From a lamination to walks}\label{sec:lamination}
 
 \subsection{Setting}
-We draw the disk as a convex $n$-gon and $T$ as a set of $n-3$ diagonals
-$\tau_1,\dots,\tau_{n-3}$. The single lamination $L$ is a curve whose endpoints
-lie in the interiors of two boundary edges. It is not allowed to cut off a
-region containing at most one marked point, so its endpoints lie on two
-non-adjacent edges, and up to isotopy it is the chord joining their
-midpoints. We use the conventions of~\cite[Section~2]{KLL}: the exchange
-matrix $B(T)=(b_{ij})$ has $b_{ij}=1$ when $\tau_j$ immediately follows
-$\tau_i$ clockwise in a triangle of $T$ (summed over the triangles), and the
-shear coordinate $b_{\tau}(T,L)$ is $+1$ or $-1$ when $L$ crosses the
-quadrilateral formed by the two triangles adjacent to $\tau$ in the S-shape or
-the Z-shape of~\cite[Figure~3]{KLL}, and $0$ otherwise. The extended exchange
-matrix is $B(T)$ with the extra row $(b_{\tau_j}(T,L))_j$.
+We realize the disk as a convex $n$-gon and $T$ as a set of $n-3$ non-crossing
+diagonals $\tau_1,\dots,\tau_{n-3}$. The single lamination $L$ is a curve whose
+endpoints lie in the interiors of two boundary edges. Because a lamination may
+not cut off a region containing at most one marked point, these two boundary
+edges are non-adjacent; up to isotopy, it is the chord joining their midpoints.
 
-If $\gamma$ is a diagonal of $T$ then $c_\gamma=1$, so let $\gamma$ be any
+We follow the conventions of~\cite[Section~2]{KLL}. The exchange matrix
+$B(T)=(b_{ij})$ has $b_{ij}=1$ when $\tau_j$ immediately follows $\tau_i$
+clockwise in a triangle of $T$ (summed over the triangles). The shear
+coordinate $b_{\tau}(T,L)$ is $+1$ or $-1$ when $L$ crosses the quadrilateral
+formed by the two triangles adjacent to $\tau$ in the S-shape or the Z-shape
+of~\cite[Figure~3]{KLL}, respectively, and $0$ otherwise. The extended exchange
+matrix is obtained from $B(T)$ by appending the extra row $(b_{\tau_j}(T,L))_j$.
+
+If $\gamma$ is a diagonal of $T$, then $c_\gamma=1$, so assume $\gamma$ is any
 other diagonal. Orient $\gamma$, and let $\rho_1,\dots,\rho_d$ be the diagonals
-of $T$ that it crosses, in order. For $1\le j<d$ the diagonals $\rho_j$ and
-$\rho_{j+1}$ are two sides of a triangle of $T$; let $v_j$ be their common
-endpoint. Every vertex other than the endpoints of $\gamma$ lies to the left
-or to the right of $\gamma$.
+of $T$ that it crosses, in order. For each $1\le j<d$, the diagonals $\rho_j$
+and $\rho_{j+1}$ are two sides of a triangle of $T$; let $v_j$ be their common
+endpoint. Every vertex of the polygon other than the endpoints of $\gamma$ lies
+either to the left or to the right of $\gamma$.
 
 \subsection{The \texorpdfstring{$c$}{c}-polynomial as an ideal sum}
-The \emph{fence poset} of $\gamma$ is the partial order on $\{1,\dots,d\}$
-generated by the relations $j+1\prec j$ when $v_j$ lies to the right of
-$\gamma$, and $j\prec j+1$ when it lies to the left. By the expansion formulas
-of Schiffler~\cite{Sch} and of Musiker, Schiffler and Williams~\cite{MSW}, in
-the poset form of~\cite[Section~3.2]{KLL} (see also~\cite{PRS}), the
-$F$-polynomial of $x_\gamma$ is
+We next rewrite the specialized polynomial as a sum over binary sequences
+coming from a poset. The \emph{fence poset} of $\gamma$ is the partial order on
+$\{1,\dots,d\}$ generated by the relations $j+1\prec j$ when $v_j$ lies to the
+right of $\gamma$, and $j\prec j+1$ when it lies to the left. By the expansion
+formulas of Schiffler~\cite{Sch} and of Musiker, Schiffler and
+Williams~\cite{MSW}, written in the poset form of~\cite[Section~3.2]{KLL} (see
+also~\cite{PRS}), the $F$-polynomial of $x_\gamma$ is
 \[
 F_\gamma(y_1,\dots,y_{n-3})=\sum_{I}\prod_{j\in I}y_{\rho_j},
 \]
-where $I$ runs over the order ideals of the fence poset and $y_\tau$ denotes
-the principal coefficient attached to $\tau$. We encode an order ideal by
-$z_j=\mathbf 1_{j\in I}$. The binary sequences $(z_1,\dots,z_d)$ that arise are
-exactly those in which, for each $j<d$, a change from $z_j=0$ to $z_{j+1}=1$
-is allowed only if $v_j$ lies to the right of $\gamma$, and a change from $1$
-to $0$ only if $v_j$ lies to the left.
+where $I$ runs over all order ideals (downward-closed subsets) of the fence
+poset and $y_\tau$ denotes the principal coefficient attached to $\tau$.
+Encoding an order ideal by its indicator sequence $z_j=\mathbf 1_{j\in I}$, the
+binary sequences $(z_1,\dots,z_d)$ that arise are precisely those in which, for
+each $j<d$, a change from $z_j=0$ to $z_{j+1}=1$ is allowed only when $v_j$
+lies to the right of $\gamma$, and a change from $1$ to $0$ only when $v_j$
+lies to the left.
 
-Now specialize. The coefficients $y_\tau=q^{b_\tau(T,L)}$ lie in the tropical
-semifield generated by $q$. By the separation formula of Fomin and
-Zelevinsky~\cite[Theorem~3.7]{FZ},
+We now apply the specialization. The coefficients $y_\tau=q^{b_\tau(T,L)}$ lie
+in the tropical semifield generated by $q$. By the separation formula of Fomin
+and Zelevinsky~\cite[Theorem~3.7]{FZ},
 $x_\gamma=F_\gamma(\hat y)\,/\,F_\gamma|_{\mathrm{Trop}}(y)$ times a Laurent
-monomial in the initial cluster variables. When all initial cluster variables
-equal $1$, we have $\hat y_\tau=y_\tau$, and the tropical evaluation of the
-subtraction-free polynomial $F_\gamma$ is $q$ raised to the smallest exponent
-occurring in $F_\gamma(q^{b_\tau(T,L)})$. Therefore
+monomial in the initial cluster variables. Setting all initial cluster
+variables to $1$ gives $\hat y_\tau=y_\tau$, and the tropical evaluation of the
+positive-coefficient polynomial $F_\gamma$ is $q$ raised to the smallest
+exponent occurring in $F_\gamma(q^{b_\tau(T,L)})$. Therefore,
 \begin{equation}\label{eq:idealsum}
 c_\gamma(q)=\widetilde{E}(q),\qquad
 E(q)=\sum_{z}q^{\sum_{j=1}^d\beta_jz_j},\qquad \beta_j=b_{\rho_j}(T,L),
 \end{equation}
-where $z$ runs over the binary sequences described above. Reversing the
-orientation of the fence relations, or the sign of every shear coordinate,
-replaces $c_\gamma(q)$ by $q^{D}c_\gamma(1/q)$ with $D=\deg c_\gamma$. This
-does not affect the conclusion of Theorem~\ref{thm:main}. The computations in
-Section~\ref{sec:examples} confirm~\eqref{eq:idealsum} with the conventions
-above against direct mutation in all polygons with at most nine vertices.
+where $z$ ranges over the admissible binary sequences described above.
+
+Reversing either the orientation of the fence relations or the sign of every
+shear coordinate replaces $c_\gamma(q)$ by $q^{D}c_\gamma(1/q)$, where
+$D=\deg c_\gamma$. This transformation does not affect the conclusion of
+Theorem~\ref{thm:main}. The computations in Section~\ref{sec:examples}
+verify~\eqref{eq:idealsum} under the conventions above against direct mutation
+in all polygons with at most nine vertices.
 
 \subsection{The common run and the shear coordinates}
-The triangles of $T$ are the vertices of its dual graph, which is a tree since
-the disk is simply connected. The triangles met by $\gamma$ form a path in
-this tree, and so do the triangles met by $L$. Two paths in a tree meet in a
-path, possibly empty, so the diagonals crossed by both $\gamma$ and $L$ are
-consecutive in the order along $\gamma$, say $\rho_{p+1},\dots,\rho_{p+r}$.
-Only these diagonals can have nonzero shear coordinate among
-$\rho_1,\dots,\rho_d$, since a diagonal that $L$ does not cross has shear
-coordinate~$0$. If $r=0$, then all exponents in~\eqref{eq:idealsum} vanish and
-$c_\gamma$ is a positive constant. Assume $r\ge1$, and orient $L$ so that it
+The triangles of $T$ form the vertices of its dual graph, which is a tree
+because the disk is simply connected. Both the triangles met by $\gamma$ and
+the triangles met by $L$ form paths in this tree. Since the intersection of two
+paths in a tree is a path (possibly empty), the diagonals crossed by both
+$\gamma$ and $L$ are consecutive along $\gamma$, say
+$\rho_{p+1},\dots,\rho_{p+r}$.
+
+Among $\rho_1,\dots,\rho_d$, only these diagonals can have nonzero shear
+coordinate, because any diagonal not crossed by $L$ has shear coordinate~$0$.
+If $r=0$, then every exponent in~\eqref{eq:idealsum} vanishes and $c_\gamma$ is
+a positive constant. Assume therefore that $r\ge1$, and orient $L$ so that it
 crosses $\rho_{p+1},\dots,\rho_{p+r}$ in this order.
 
-For $1\le i<r$, the diagonals $\rho_{p+i}$ and $\rho_{p+i+1}$ are sides of a
-triangle that both curves cross, entering through the first and leaving
-through the second. Hence their common vertex $v_{p+i}$ lies on the same side
-of $L$ as of $\gamma$. Put $d_i=1$ if this vertex lies to the right of $L$, and
-$d_i=0$ otherwise. Before crossing $\rho_{p+1}$, the curve $L$ passes through
-the triangle on the other side of $\rho_{p+1}$, entering it through a side
-$\alpha$, which is a boundary edge or another diagonal. Put $d_0=1$ if the
+For each $1\le i<r$, the diagonals $\rho_{p+i}$ and $\rho_{p+i+1}$ are sides of
+a triangle crossed by both curves, which enter through the first diagonal and
+leave through the second. Hence their common vertex $v_{p+i}$ lies on the same
+side of $L$ as of $\gamma$. Set $d_i=1$ if this vertex lies to the right of
+$L$, and $d_i=0$ otherwise. Before crossing $\rho_{p+1}$, the curve $L$ passes
+through the triangle on the other side of $\rho_{p+1}$, entering through a side
+$\alpha$ (either a boundary edge or another diagonal). Set $d_0=1$ if the
 common endpoint of $\alpha$ and $\rho_{p+1}$ lies to the right of $L$, and
-$d_0=0$ otherwise. Define $d_r$ in the same way using the side $\omega$
-through which $L$ leaves the triangle after $\rho_{p+r}$. The bits $d_0$ and
-$d_r$ concern $L$ only; they need not agree with the turns of $\gamma$.
+$d_0=0$ otherwise. Define $d_r$ analogously using the side $\omega$ through
+which $L$ exits the triangle after $\rho_{p+r}$. The bits $d_0$ and $d_r$
+depend only on $L$ and need not match the turns of $\gamma$. With these bits in
+place, the shear coordinates along the common run take a simple telescoping
+form.
 
 \begin{lemma}\label{lem:shear}
 For $1\le i\le r$, the shear coordinate of $\rho_{p+i}$ is $d_{i-1}-d_i$.
@@ -316,112 +347,118 @@ Let $Q$ be the quadrilateral formed by the two triangles adjacent to
 $\rho=\rho_{p+i}$. The curve $L$ crosses $Q$, entering through a side $\alpha'$
 and leaving through a side $\omega'$, where $\alpha'$ is $\rho_{p+i-1}$ (or
 $\alpha$ if $i=1$) and $\omega'$ is $\rho_{p+i+1}$ (or $\omega$ if $i=r$). The
-side $\alpha'$ meets $\rho$ in the endpoint of $\rho$ that bit $d_{i-1}$
-describes, and $\omega'$ meets $\rho$ in the endpoint that $d_i$ describes.
-Because $L$ crosses $\rho$, one endpoint of $\rho$ lies to the right of $L$
-and the other to the left. If $d_{i-1}=d_i$, then $\alpha'$ and $\omega'$ share
-an endpoint of $\rho$, so they are adjacent sides of $Q$ and $L$ cuts off a
-corner of $Q$; the shear coordinate is $0$. If $d_{i-1}\ne d_i$, then
-$\alpha'$ and $\omega'$ are opposite sides of $Q$, and $L$ forms an S-shape or
-a Z-shape. In~\cite[Figure~3]{KLL}, the S-shape with contribution $+1$ is the
-one in which $L$ enters through the side at the endpoint of $\rho$ on its
-right and leaves through the side at the endpoint on its left, that is,
-$(d_{i-1},d_i)=(1,0)$. The Z-shape is $(d_{i-1},d_i)=(0,1)$ with contribution
-$-1$. Reversing the orientation of $L$ exchanges left and right and reverses
-the order of the bits, so the description does not depend on the orientation.
+side $\alpha'$ meets $\rho$ at the endpoint of $\rho$ recorded by $d_{i-1}$,
+and $\omega'$ meets $\rho$ at the endpoint recorded by $d_i$. Because $L$
+crosses $\rho$, one endpoint of $\rho$ lies to the right of $L$ and the other
+to the left.
+
+If $d_{i-1}=d_i$, then $\alpha'$ and $\omega'$ meet at the same endpoint of
+$\rho$. They are therefore adjacent sides of $Q$, so $L$ cuts off a corner of
+$Q$ and the shear coordinate is $0$. If $d_{i-1}\ne d_i$, then $\alpha'$ and
+$\omega'$ are opposite sides of $Q$, so $L$ forms either an S-shape or a
+Z-shape. In~\cite[Figure~3]{KLL}, the S-shape (contribution $+1$) occurs when
+$L$ enters through the side meeting the right endpoint of $\rho$ and leaves
+through the side meeting the left endpoint, meaning $(d_{i-1},d_i)=(1,0)$. The
+Z-shape is $(d_{i-1},d_i)=(0,1)$, with contribution $-1$. Reversing the
+orientation of $L$ swaps left and right and reverses the order of the bits, so
+this formula is independent of the orientation.
 \end{proof}
 
 \subsection{Proof of Theorem~\ref{thm:main}}
-Keep $r\ge1$. In the sum~\eqref{eq:idealsum}, the exponent depends only on
-$z_{p+1},\dots,z_{p+r}$, and by Lemma~\ref{lem:shear} it equals
+Continue to assume $r\ge1$. In the sum~\eqref{eq:idealsum}, the exponent
+depends only on $z_{p+1},\dots,z_{p+r}$, and by Lemma~\ref{lem:shear} it equals
 \[
 e(z)=\sum_{i=1}^r(d_{i-1}-d_i)\,z_{p+i}.
 \]
-The constraints on $z_1,\dots,z_{p+1}$ and on $z_{p+r},\dots,z_d$ form two
-paths, which meet the run only in $z_{p+1}$ and $z_{p+r}$. For $\kappa\in\{0,1\}$,
-let $\lambda_\kappa$ be the number of admissible $(z_1,\dots,z_{p+1})$ with
-$z_{p+1}=\kappa$, and $\lambda'_\kappa$ the number of admissible
-$(z_{p+r},\dots,z_d)$ with $z_{p+r}=\kappa$. The constant sequences are
-admissible, so $\lambda_\kappa,\lambda'_\kappa\ge1$. Inside the run, the change
-between $z_{p+i}$ and $z_{p+i+1}$ is allowed only toward $d_i$, since $d_i$
-records the side of $v_{p+i}$ with respect to both curves. Writing
-$u_i=z_{p+i}$, we obtain
+The admissibility constraints on $z_1,\dots,z_{p+1}$ and on
+$z_{p+r},\dots,z_d$ form two paths that meet the common run only at $z_{p+1}$
+and $z_{p+r}$. For each $\kappa\in\{0,1\}$, let $\lambda_\kappa$ be the number
+of admissible sequences $(z_1,\dots,z_{p+1})$ with $z_{p+1}=\kappa$, and let
+$\lambda'_\kappa$ be the number of admissible sequences $(z_{p+r},\dots,z_d)$
+with $z_{p+r}=\kappa$. Since the constant sequences are admissible, we have
+$\lambda_\kappa,\lambda'_\kappa\ge1$. Along the common run, the step from
+$z_{p+i}$ to $z_{p+i+1}$ can move only toward $d_i$, because $d_i$ records the
+side of $v_{p+i}$ with respect to both curves. Setting $u_i=z_{p+i}$, we obtain
 \begin{equation}\label{eq:split}
 E(q)=\sum_{u}\lambda_{u_1}\,\lambda'_{u_r}\,q^{e(u)},
 \end{equation}
-over $u\in\{0,1\}^r$ such that each step $u_i\to u_{i+1}$ ($1\le i<r$) stays
-or moves to $d_i$.
+summed over all $u\in\{0,1\}^r$ in which each step $u_i\to u_{i+1}$
+($1\le i<r$) either stays fixed or moves to $d_i$.
 
-Turn~\eqref{eq:split} into a walk enumerator. Add a state $u_0=1-d_0$ and a
-first step of direction $d_0$ with weight $\lambda_{d_0}/\lambda_{1-d_0}$, so
-that $u_1$ is free and the step changes exactly when $u_1=d_0$. Add a state
-$u_{r+1}=d_r$ and a last step of direction $d_r$ with weight
-$\lambda'_{1-d_r}/\lambda'_{d_r}$, which changes exactly when $u_r=1-d_r$. Give the
-steps inside the run weight $1$. The step from $u_i$ to $u_{i+1}$ has direction
-$d_i$ for $0\le i\le r$, so it contributes $d_i(u_{i+1}-u_i)$ upward changes.
-Using $u_0=1-d_0$ and $u_{r+1}=d_r$,
+We now rewrite~\eqref{eq:split} as a walk generating polynomial. Prepend a
+state $u_0=1-d_0$ together with a first step of direction $d_0$ and weight
+$\lambda_{d_0}/\lambda_{1-d_0}$; then $u_1$ is unconstrained, and this step is
+a change precisely when $u_1=d_0$. Similarly, append a state $u_{r+1}=d_r$ with
+a last step of direction $d_r$ and weight $\lambda'_{1-d_r}/\lambda'_{d_r}$,
+which is a change precisely when $u_r=1-d_r$. Assign weight $1$ to every step
+inside the run. The step from $u_i$ to $u_{i+1}$ has direction $d_i$ for each
+$0\le i\le r$, so it contributes $d_i(u_{i+1}-u_i)$ upward changes. Using
+$u_0=1-d_0$ and $u_{r+1}=d_r$, we compute
 \[
 \up(u)=\sum_{i=0}^{r}d_i(u_{i+1}-u_i)=d_0u_1+\sum_{i=1}^{r-1}d_i(u_{i+1}-u_i)+d_r(1-u_r)
 =e(u)+d_r.
 \]
 Hence $E(q)=\lambda_{1-d_0}\,\lambda'_{d_r}\,q^{-d_r}\,W_{1-d_0,\,d_r}(q)$ for
-this step list, and $c_\gamma=\widetilde E$ is a positive multiple of
-$\widetilde W_{1-d_0,\,d_r}$. The constant sequences show that
+this step list, so $c_\gamma=\widetilde E$ is a positive multiple of
+$\widetilde W_{1-d_0,\,d_r}$. Because the constant sequences are admissible,
 $W_{1-d_0,d_r}\ne0$, and Lemma~\ref{lem:walks} completes the proof.
 \qed
 
 \begin{proof}[Proof of Corollary~\ref{cor:monomials}]
-A cluster monomial is a product of cluster variables, and setting
-$x_1=\cdots=x_{n-3}=1$, $y=q$ is a ring homomorphism. Each factor specializes
-to a positive constant or a polynomial with only negative roots, by
-Theorem~\ref{thm:main}.
+Every cluster monomial is a product of cluster variables, and setting
+$x_1=\cdots=x_{n-3}=1$, $y=q$ is a ring homomorphism. By
+Theorem~\ref{thm:main}, each factor specializes to a positive constant or a
+polynomial with only negative real roots, and hence so does their product.
 \end{proof}
 
 \section{Examples and computations}\label{sec:examples}
 
 \subsection{The examples of Kang, Lee and Lim}
 The worked examples in~\cite[Section~5.1]{KLL} (numbered as in
-arXiv:2508.04396v4) print some $c$-polynomials that do not have only real
-roots. The following comparison shows that they do not
-contradict Theorem~\ref{thm:main}.
+arXiv:2508.04396v4) display several $c$-polynomials that are not real-rooted.
+The comparison below shows that none of them contradicts
+Theorem~\ref{thm:main}.
 
-In~\cite[Example~3]{KLL} the extended exchange matrix is the one printed
-in~\cite[Example~2]{KLL}, for a triangulated octagon, and the printed value is
-$2q^2+2q+2$. In~\cite[Example~4]{KLL} the printed value is $2q^3+4q^2+2q+1$.
-Mutating the printed matrices along the five diagonals in order gives
-$2q^2+6q+3$ and $2q^2+5q+2$, respectively, and no run of consecutive diagonals
-gives the printed values. In fact, neither printed polynomial is the
-$c$-polynomial of any arc for any single lamination of any triangulated
-octagon. In~\cite[Example~6]{KLL} the displayed polynomial
-$2q^8+4q^7+6q^6+10q^5+11q^4+12q^3+9q^2+5q+2$ coincides with the one listed
-in~\cite[Table~4]{KLL} for a lamination with several curves, and it is not
+In~\cite[Example~3]{KLL}, the extended exchange matrix is the one printed
+in~\cite[Example~2]{KLL} for a triangulated octagon, and the printed polynomial
+is $2q^2+2q+2$. In~\cite[Example~4]{KLL}, the printed polynomial is
+$2q^3+4q^2+2q+1$. Mutating the printed matrices along the five diagonals in
+order instead produces $2q^2+6q+3$ and $2q^2+5q+2$, respectively, and no run of
+consecutive diagonals yields the printed values. In fact, neither printed
+polynomial occurs as the $c$-polynomial of any arc for any single lamination of
+any triangulated octagon.
+
+In~\cite[Example~6]{KLL}, the displayed polynomial
+$2q^8+4q^7+6q^6+10q^5+11q^4+12q^3+9q^2+5q+2$ matches the one listed
+in~\cite[Table~4]{KLL} for a lamination with multiple curves; it is not
 log-concave, since $6^2<4\cdot10$. For the single lamination drawn
-in~\cite[Figure~17]{KLL}, label the vertices $A,\dots,L$ clockwise, starting
-from the leftmost one. The triangulation consists of $BL$, $CL$, $DL$, $DK$,
-$EK$, $EJ$, $EI$, $FI$, $GI$, the arc is $AH$, and $L$ runs from the edge $AB$
-to the edge $GH$. Direct mutation gives
+in~\cite[Figure~17]{KLL}, label the vertices $A,\dots,L$ clockwise starting
+from the leftmost vertex. The triangulation consists of $BL$, $CL$, $DL$, $DK$,
+$EK$, $EJ$, $EI$, $FI$, $GI$, the arc is $AH$, and $L$ runs from edge $AB$ to
+edge $GH$. Direct mutation gives
 \[
 c_{AH}(q)=8q^3+26q^2+22q+5,
 \]
 whose roots are simple and negative.
 
 \subsection{Computer checks}
-The repository listed below contains short Python programs, using only the
-standard library and exact arithmetic, that check each step of the argument on
-small cases.
+The repository cited below contains short Python programs, using only the
+standard library and exact arithmetic, that verify each step of the proof on
+small cases:
 \begin{itemize}
-\item Lemma~\ref{lem:walks} and the identity~\eqref{eq:det} are compared on
+\item Lemma~\ref{lem:walks} and the identity~\eqref{eq:det} are verified on
 $11{,}575$ random step lists.
-\item Lemma~\ref{lem:shear}: in every triangulated $n$-gon with $n\le10$ and for
-every single lamination, the shear coordinates computed from the S/Z rule equal
-$d_{i-1}-d_i$ on the diagonals crossed by $L$ and vanish elsewhere.
-\item The identity~\eqref{eq:idealsum} and Theorem~\ref{thm:main}: for every
-triangulation of an $n$-gon with $4\le n\le9$, every single lamination and
-every arc ($375{,}040$ triples in all), mutation of the extended exchange matrix
-gives the same polynomial as the ideal sum. Each of the $228$ distinct
-polynomials that occur is checked by Sturm's theorem to have only simple,
-negative roots.
-\item The computations of this section.
+\item Lemma~\ref{lem:shear} is checked for every triangulated $n$-gon with
+$n\le10$ and every single lamination: the shear coordinates computed from the
+S/Z rule equal $d_{i-1}-d_i$ on the diagonals crossed by $L$ and vanish
+elsewhere.
+\item The identity~\eqref{eq:idealsum} and Theorem~\ref{thm:main} are checked
+for every triangulation of an $n$-gon with $4\le n\le9$, every single
+lamination and every arc ($375{,}040$ triples in all): mutating the extended
+exchange matrix yields the same polynomial as the ideal sum, and Sturm's
+theorem confirms that each of the $228$ distinct polynomials occurring has only
+simple, negative roots.
+\item All computations in this section are reproduced directly.
 \end{itemize}
 
 \section*{Verification code}
