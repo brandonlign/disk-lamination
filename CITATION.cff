@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the paper when using the result or verification code."
+title: "Single-lamination cluster polynomials of a disk are real-rooted"
+type: software
+authors:
+  - family-names: Li
+    given-names: Brandon
+    email: brandon.li.gn@gmail.com
+    affiliation: "Great Neck, New York, USA"
+repository-code: "https://github.com/brandonlign/disk-lamination"
+license: MIT
+keywords:
+  - cluster algebra
+  - lamination
+  - shear coordinates
+  - log-concavity
+  - real-rooted polynomial
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Li
+      given-names: Brandon
+  title: "Single-lamination cluster polynomials of a disk are real-rooted"
+  year: 2026

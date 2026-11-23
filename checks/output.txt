@@ -1,0 +1,27 @@
+== Lemma 2.1: walk enumerators and the determinant formula
+Lemma 2.1: 11575 random walk enumerators agree with the determinant formula and have simple negative roots: ok
+
+== Section 3: shear coordinates by the S/Z rule equal d_(i-1) - d_i
+n=4: 4 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+n=5: 25 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+n=6: 126 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+n=7: 588 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+n=8: 2640 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+n=9: 11583 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+n=10: 50050 (triangulation, lamination) pairs; S/Z shear coordinates equal d_(i-1) - d_i
+
+== Main theorem: mutation equals the weighted ideal sum, and all roots are simple and negative
+n=4: 8 (triangulation, lamination, arc) triples; mutation equals the ideal sum; 2 distinct polynomials so far, all with simple negative roots
+n=5: 125 (triangulation, lamination, arc) triples; mutation equals the ideal sum; 5 distinct polynomials so far, all with simple negative roots
+n=6: 1134 (triangulation, lamination, arc) triples; mutation equals the ideal sum; 14 distinct polynomials so far, all with simple negative roots
+n=7: 8232 (triangulation, lamination, arc) triples; mutation equals the ideal sum; 31 distinct polynomials so far, all with simple negative roots
+n=8: 52800 (triangulation, lamination, arc) triples; mutation equals the ideal sum; 92 distinct polynomials so far, all with simple negative roots
+n=9: 312741 (triangulation, lamination, arc) triples; mutation equals the ideal sum; 228 distinct polynomials so far, all with simple negative roots
+
+== Section 4: the examples of Kang, Lee and Lim
+Example 3 (matrix of Example 2): arc crossing 1..5 gives 3 + 6q + 2q^2; printed 2 + 2q + 2q^2 does not occur in this seed
+Example 4: arc crossing 1..5 gives 2 + 5q + 2q^2; printed 1 + 2q + 4q^2 + 2q^3 does not occur in this seed
+All single laminations of all triangulated octagons: 92 distinct c-polynomials, neither printed one among them
+Example 6 (Figure 17): arc AH gives 5 + 22q + 26q^2 + 8q^3
+
+all checks passed
