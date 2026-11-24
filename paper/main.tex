@@ -31,11 +31,15 @@ Consider a cluster algebra from a triangulated polygon with coefficients given
 by a single lamination. Kang, Lee and Lim specialize the cluster variable of an
 arc by setting every initial cluster variable to $1$ and the coefficient
 variable to $q$. They proved that the resulting polynomial is unimodal and
-conjectured that it is log-concave. We prove that it is either constant or has
+conjectured that it is log-concave. They also observed that the standard
+approach to log-concavity through geometric lattices does not apply, since the
+constant and leading coefficients can both equal $2$. We prove that it is either constant or has
 only simple, negative real roots. In particular, it is log-concave, which
 resolves their conjecture. Our proof reduces the polynomial to a weighted count
 of two-state walks, which we express as $\det(I+qMM^{\mathsf T})$ for a matrix
-$M$ with bidiagonal inverse.
+$M$ with bidiagonal inverse. Shear coordinates of the lamination then
+telescope along the diagonals crossed by the arc. As a consequence, the same
+specialization of every cluster monomial has only negative real roots.
 \end{abstract}
 
 \maketitle
@@ -467,9 +471,19 @@ The programs described in Section~\ref{sec:examples} are available at\\
 \url{https://github.com/brandonlign/disk-lamination}. The script
 \path{checks/run_all.sh} runs all of them in under a minute with Python~3.
 
-\section*{Acknowledgments}
-Claude (Anthropic) helped with the proofs, the verification code, and the
-manuscript.
+\section*{Statements and Declarations}
+
+\paragraph{Use of AI tools.} Claude (Anthropic) helped with the proofs, the verification code, and the
+manuscript. The author takes full responsibility for the content.
+
+\paragraph{Competing interests.} The author has no relevant financial or non-financial
+interests to disclose.
+
+\paragraph{Funding.} No funding was received for this work.
+
+\paragraph{Data availability.} The verification code is provided as Online
+Resource~1 and at \url{https://github.com/brandonlign/disk-lamination}. No other data
+were used.
 
 \begin{thebibliography}{9}
 
